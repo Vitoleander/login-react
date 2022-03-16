@@ -1,8 +1,6 @@
 import {
-    StyledTextInput, 
     StyledFormArea, 
     StyledFormButton, 
-    StyledLabel, 
     Avatar, 
     StyledTitle, 
     colors, 
@@ -11,12 +9,11 @@ import {
     TextLink,
     CopyrightText
 } from './../components/Styles';
-import Logo from './../assets/logo.png';
 
+import Logo from './../assets/logo.png';
 import {Formik, Form} from 'formik';
 import { TextInput } from './../components/FormLib';
 import * as Yup from 'yup';
-
 import {FiMail, FiLock, FiUser, FiCalendar} from 'react-icons/fi';
 
 const Signup = () => {
@@ -34,23 +31,27 @@ const Signup = () => {
                         dateOfBirth: "",
                         email: "",
                         password: "",
-                        repeatPassword: "",
+                        confirmPassword: "",
                     }}
 
                     validationSchema={
                         Yup.object({
                             name: Yup.string()
                             .required("Required"),
+
                             dateOfBirth: Yup.date()
                             .required("Required"),
+
                             email: Yup.string()
                             .email("Invalid email")
                             .required("Required"),
+
                             password: Yup.string()
                             .min(8, "Password is too short")
                             .max(15, "Password is  too long")
                             .required("Required"),
-                            repeatPassword: Yup.string()
+
+                            confirmPassword: Yup.string()
                             .required("Required")
                             .oneOf([Yup.ref("password")], "Password must match")
                         })
@@ -94,26 +95,30 @@ const Signup = () => {
                             />
 
                             <TextInput
-                                name="repeatPassword"
+                                name="confirmPassword"
                                 type="password"
-                                label="Repeate your Password"
+                                label="Confirm your Password"
                                 placeholder="******"
                                 icon={<FiLock/>}
                             />
 
                             <ButtonGroup>
-                                <StyledFormButton type="submit">
+                                <StyledFormButton onClick={event =>  window.location.href='/dashboard'} type="submit">
                                     Signup
                                 </StyledFormButton>
-
                             </ButtonGroup>
+
                         </Form>
                     )}
                 </Formik>
 
                 <ExtraText>
-                    Already our friend? <TextLink to="/login">Login Here</TextLink>
+                    Already our friend? 
+                    <TextLink to="/login">
+                        Login Here
+                    </TextLink>
                 </ExtraText>
+                
             </StyledFormArea>
 
             <CopyrightText>

@@ -1,8 +1,6 @@
 import {
-    StyledTextInput, 
     StyledFormArea, 
     StyledFormButton, 
-    StyledLabel, 
     Avatar, 
     StyledTitle, 
     colors, 
@@ -11,12 +9,11 @@ import {
     TextLink,
     CopyrightText
 } from './../components/Styles';
-import Logo from './../assets/logo.png';
 
+import Logo from './../assets/logo.png';
 import {Formik, Form} from 'formik';
 import { TextInput } from './../components/FormLib';
 import * as Yup from 'yup';
-
 import {FiMail, FiLock} from 'react-icons/fi';
 
 const Login = () => {
@@ -48,8 +45,8 @@ const Login = () => {
 
                     onSubmit={(values, {setSubmitting}) => {
                         console.log(values);
-                    }}
-                >
+                    }}>
+                
                     {({isSubmitting}) => (
                         <Form>
                             <TextInput 
@@ -69,7 +66,7 @@ const Login = () => {
                             />
 
                             <ButtonGroup>
-                                <StyledFormButton type="submit">
+                                <StyledFormButton onClick={event =>  window.location.href='/dashboard'} type="submit">
                                     Login
                                 </StyledFormButton>
 
@@ -79,8 +76,12 @@ const Login = () => {
                 </Formik>
 
                 <ExtraText>
-                    New here? <TextLink to="/signup">Signup Here</TextLink>
+                    New here? 
+                    <TextLink to="/signup">
+                        Signup Here
+                    </TextLink>
                 </ExtraText>
+                
             </StyledFormArea>
 
             <CopyrightText>

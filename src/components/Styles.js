@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import background from "./../assets/bg.jpg";
-
 import {Link} from 'react-router-dom';
 
 export const colors = {
@@ -134,7 +133,7 @@ export const StyledFormButton = styled.button`
         background-color: ${colors.pink};
         color: ${colors.green};
         cursor: pointer;
-}
+    }
 `;
 
 export const ErrorMsg = styled.div`

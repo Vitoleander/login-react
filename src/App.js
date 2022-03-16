@@ -11,7 +11,6 @@ import {
   Routes,
   Route
 }  from 'react-router-dom';
-import { useEffect } from 'react';
 
 function App() {
 
@@ -30,10 +29,7 @@ function App() {
         </Routes>
 
       </StyledContainer>
-    </Router>
-
-  
-    
+    </Router> 
   );
 }
 

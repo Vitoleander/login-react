@@ -1,6 +1,5 @@
 import { 
     StyledTitle, 
-    StyledSubTitle, 
     Avatar, 
     StyledButton, 
     ButtonGroup,
@@ -25,6 +24,7 @@ const Dashboard = () => {
             }}>
                 <Avatar image={Logo} />
             </div>
+
             <StyledFormArea bg={colors.green}>
             <div>
                 <StyledTitle size={45}>
@@ -32,8 +32,11 @@ const Dashboard = () => {
                 </StyledTitle>
 
                 <ButtonGroup>
-                <StyledButton to="/">Logout</StyledButton>
+                    <StyledButton to="/">
+                        Logout
+                    </StyledButton>
                 </ButtonGroup>
+                
             </div>
             </StyledFormArea>
 

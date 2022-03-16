@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import { useField } from "formik";
+
 import {
     StyledTextInput,
     StyledLabel,
@@ -19,13 +20,13 @@ export const TextInput = ({icon, ...props}) => {
                 {props.label}
             </StyledLabel>
 
-            {props.type !== "password" && (
-                <StyledTextInput 
-                    invalid={meta.touched && meta.error}
-                        {...field} 
-                        {...props}
-                />
-            )}
+                {props.type !== "password" && (
+                    <StyledTextInput 
+                        invalid={meta.touched && meta.error}
+                            {...field} 
+                            {...props}
+                    />
+                )}
 
                 {props.type === "password" && (
                     <StyledTextInput 
@@ -39,19 +40,18 @@ export const TextInput = ({icon, ...props}) => {
                 {icon}
             </StyledIcon>
 
-            {
-                props.type === "password" && (
-                <StyledIcon onClick={() => setShow(!show)} right>
-                    {show && <FiEye />}
-                    {!show &&<FiEyeOff />}
-                </StyledIcon>
-            )}
+                {props.type === "password" && (
+                    <StyledIcon onClick={() => setShow(!show)} right>
+                        {show && <FiEye />}
+                        {!show &&<FiEyeOff />}
+                    </StyledIcon>
+                )}
 
-            {meta.touched && meta.error ? (
-                <ErrorMsg>{meta.error}</ErrorMsg>
-            ) : (
-                <ErrorMsg style={{visability: "hidden"}}>.</ErrorMsg>
-            )}
+                {meta.touched && meta.error ? (
+                    <ErrorMsg>{meta.error}</ErrorMsg>
+                ) : (
+                    <ErrorMsg style={{visability: "hidden"}}>.</ErrorMsg>
+                )}
         </div>
     );
 };
