@@ -3,6 +3,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 
+
 import {StyledContainer} from './components/Styles';
 
 import {
@@ -10,8 +11,10 @@ import {
   Routes,
   Route
 }  from 'react-router-dom';
+import { useEffect } from 'react';
 
 function App() {
+
   return (
     <Router>
       <StyledContainer>
@@ -28,6 +31,8 @@ function App() {
 
       </StyledContainer>
     </Router>
+
+  
     
   );
 }
