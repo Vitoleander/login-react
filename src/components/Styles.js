@@ -61,7 +61,7 @@ export const StyledButton = styled(Link)`
     width: 150px;
     background-color: transparent;
     font-size: 16px;
-    border: 3px solid ${colors.pink};
+    border: 3px solid ${colors.white};
     border-radius: 25px;
     color: ${colors.white}; 
     text-decoration: none;
@@ -89,8 +89,8 @@ export const StyledTextInput = styled.input`
     padding-left: 50px;
     font-size: 17px;
     letter-spacing: 1px;
-    color: ${colors.white};
-    background-color: ${colors.pink};
+    color: ${colors.darkg};
+    background-color: ${colors.white};
     border: 0;
     outline: 0;
     display: block;
